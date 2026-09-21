@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>COOL — Opportunity Engine</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #d1d5db;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .hero {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
+
+    .hero h2 {
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.06);
+    }
+
+    .card .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    form {
+      background: white;
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
+
+    form h2 {
+      margin-bottom: 15px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #111827;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #374151;
+    }
+
+    .flow {
+      margin-top: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 18px;
+      text-align: center;
+      line-height: 2;
+      font-weight: bold;
+    }
+
+    .success {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>COOL</h1>
+  <p>Opportunity Engine</p>
+</header>
+
+<div class="container">
+
+  <section class="hero">
+    <h2>Geuza uwezo wako kuwa fursa 💡</h2>
+    <p>
+      COOL inaunganisha watu, taarifa za dunia halisi,
+      AI na biashara ili kutengeneza fursa zinazoweza
+      kuleta thamani na kipato.
+    </p>
+  </section>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">📸</div>
+      <h3>Camera</h3>
+      <p>Thibitisha bidhaa, bei na taarifa za maeneo.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎙️</div>
+      <h3>Voice</h3>
+      <p>Shiriki kazi za sauti na lugha.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📍</div>
+      <h3>Local Knowledge</h3>
+      <p>Uza maarifa ya eneo lako kwa biashara.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>AI Tasks</h3>
+      <p>Pokea kazi zinazolingana na uwezo wako.</p>
+    </div>
+
+  </div>
+
+  <form id="profileForm">
+
+    <h2>Jiunge na COOL</h2>
+
+    <input
+      type="text"
+      id="name"
+      placeholder="Jina lako"
+      required
+    >
+
+    <input
+      type="text"
+      id="city"
+      placeholder="Mji / Eneo"
+      required
+    >
+
+    <select id="skill" required>
+      <option value="">Chagua uwezo wako</option>
+      <option>Camera / Photography</option>
+      <option>Voice / Language</option>
+      <option>Local Knowledge</option>
+      <option>AI / Computer</option>
+      <option>Research</option>
+      <option>Sales / Business</option>
+    </select>
+
+    <input
+      type="tel"
+      id="whatsapp"
+      placeholder="WhatsApp number"
+      required
+    >
+
+    <button type="submit">
+      JIUNGE NA COOL 🚀
+    </button>
+
+    <div class="success" id="success">
+      🎉 Profile yako imehifadhiwa!
+    </div>
+
+  </form>
+
+  <div class="flow">
+    📱 Signal
+    →
+    🤖 AI
+    →
+    💡 Fursa
+    →
+    👤 Mshiriki
+    →
+    ✅ Uthibitisho
+    →
+    💰 Malipo
+  </div>
+
+</div>
+
+<footer>
+  COOL © 2026 — Opportunity Engine
+</footer>
+
+<script>
+
+  const form = document.getElementById("profileForm");
+  const success = document.getElementById("success");
+
+  form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const profile = {
+      name: document.getElementById("name").value,
+      city: document.getElementById("city").value,
+      skill: document.getElementById("skill").value,
+      whatsapp: document.getElementById("whatsapp").value
+    };
+
+    localStorage.setItem(
+      "cool_profile",
+      JSON.stringify(profile)
+    );
+
+    success.style.display = "block";
+
+    form.reset();
+
+  });
+
+</script>
+
+</body>
+</html>
