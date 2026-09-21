@@ -425,6 +425,41 @@ function saveProfile(){
     '✅ Profile imehifadhiwa!';
 }
 
+<script>
+function showPage(pageId, button) {
+  document.querySelectorAll(".page").forEach(function(page) {
+    page.classList.remove("active");
+  });
+
+  var selectedPage = document.getElementById(pageId);
+
+  if (selectedPage) {
+    selectedPage.classList.add("active");
+  }
+
+  document.querySelectorAll(".nav").forEach(function(nav) {
+    nav.classList.remove("active");
+  });
+
+  if (button) {
+    button.classList.add("active");
+  }
+
+  window.scrollTo(0, 0);
+}
+
+function saveProfile() {
+  var profile = {
+    name: document.getElementById("name").value,
+    city: document.getElementById("city").value,
+    phone: document.getElementById("phone").value
+  };
+
+  localStorage.setItem("cool_profile", JSON.stringify(profile));
+
+  document.getElementById("saved").innerText =
+    "✅ Profile imehifadhiwa!";
+}
 </script>
 
 </body>
