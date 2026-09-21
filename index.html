@@ -1,305 +1,429 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111827">
-  <title>COOL — Opportunity Engine</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1220">
+<link rel="manifest" href="manifest.json">
+<title>COOL</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      color: #111827;
-    }
-
-    header {
-      background: #111827;
-      color: white;
-      padding: 25px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 32px;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      margin-top: 8px;
-      color: #d1d5db;
-    }
-
-    .container {
-      max-width: 700px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .hero {
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      margin-bottom: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.08);
-    }
-
-    .hero h2 {
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      line-height: 1.6;
-      color: #4b5563;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,.06);
-    }
-
-    .card .icon {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      font-size: 17px;
-      margin-bottom: 6px;
-    }
-
-    .card p {
-      font-size: 13px;
-      color: #6b7280;
-    }
-
-    form {
-      background: white;
-      padding: 22px;
-      border-radius: 18px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.08);
-    }
-
-    form h2 {
-      margin-bottom: 15px;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 13px;
-      margin-bottom: 12px;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-size: 15px;
-    }
-
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 10px;
-      background: #111827;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #374151;
-    }
-
-    .flow {
-      margin-top: 20px;
-      background: white;
-      padding: 20px;
-      border-radius: 18px;
-      text-align: center;
-      line-height: 2;
-      font-weight: bold;
-    }
-
-    .success {
-      display: none;
-      margin-top: 15px;
-      padding: 15px;
-      border-radius: 10px;
-      background: #dcfce7;
-      color: #166534;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #6b7280;
-      font-size: 13px;
-    }
-
-    @media (max-width: 500px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#111827;
+  padding-bottom:80px
+}
+.app{
+  max-width:520px;
+  margin:auto;
+  min-height:100vh;
+  background:#f5f7fb
+}
+.header{
+  background:#0b1220;
+  color:white;
+  padding:25px 20px 30px;
+  border-radius:0 0 25px 25px
+}
+.header-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+.logo{
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:3px
+}
+.bell{
+  font-size:22px;
+  background:#182236;
+  padding:10px;
+  border-radius:50%
+}
+.welcome{
+  margin-top:25px
+}
+.welcome p{
+  color:#9ca3af;
+  font-size:14px
+}
+.welcome h2{
+  margin-top:5px
+}
+.container{padding:18px}
+.balance{
+  margin-top:-35px;
+  background:white;
+  padding:20px;
+  border-radius:18px;
+  box-shadow:0 8px 25px #00000012
+}
+.balance-title{
+  color:#6b7280;
+  font-size:13px
+}
+.money{
+  font-size:30px;
+  font-weight:bold;
+  margin:8px 0 15px
+}
+.withdraw{
+  border:0;
+  background:#111827;
+  color:white;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:bold
+}
+.section{
+  display:flex;
+  justify-content:space-between;
+  margin:25px 0 12px
+}
+.section h3{font-size:18px}
+.section span{
+  color:#6b7280;
+  font-size:13px
+}
+.tasks{
+  display:grid;
+  gap:12px
+}
+.task{
+  background:white;
+  padding:17px;
+  border-radius:17px;
+  box-shadow:0 4px 15px #0000000b
+}
+.task-top{
+  display:flex;
+  justify-content:space-between
+}
+.tag{
+  background:#eef2ff;
+  color:#4338ca;
+  padding:5px 9px;
+  border-radius:8px;
+  font-size:11px;
+  font-weight:bold
+}
+.reward{
+  font-weight:bold
+}
+.task h4{
+  margin:12px 0 7px;
+  font-size:16px
+}
+.task p{
+  color:#6b7280;
+  font-size:13px;
+  line-height:1.5
+}
+.apply{
+  width:100%;
+  border:0;
+  background:#111827;
+  color:white;
+  padding:12px;
+  border-radius:10px;
+  margin-top:13px;
+  font-weight:bold
+}
+.capabilities{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px
+}
+.cap{
+  background:white;
+  padding:18px;
+  border-radius:15px
+}
+.cap-icon{font-size:25px}
+.cap h4{margin-top:8px}
+.cap p{
+  color:#6b7280;
+  font-size:12px;
+  margin-top:5px
+}
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:520px;
+  background:white;
+  border-top:1px solid #e5e7eb;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 5px 12px;
+  z-index:10
+}
+.nav{
+  border:0;
+  background:none;
+  color:#6b7280;
+  font-size:11px;
+  text-align:center
+}
+.nav div{font-size:21px;margin-bottom:3px}
+.nav.active{color:#111827;font-weight:bold}
+.page{display:none}
+.page.active{display:block}
+input,textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  margin:7px 0
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>COOL</h1>
-  <p>Opportunity Engine</p>
+<div class="app">
+
+<!-- HOME -->
+<div id="home" class="page active">
+
+<header class="header">
+  <div class="header-top">
+    <div class="logo">COOL</div>
+    <div class="bell">🔔</div>
+  </div>
+
+  <div class="welcome">
+    <p>Karibu kwenye</p>
+    <h2>Opportunity Engine 🚀</h2>
+  </div>
 </header>
 
 <div class="container">
 
-  <section class="hero">
-    <h2>Geuza uwezo wako kuwa fursa 💡</h2>
-    <p>
-      COOL inaunganisha watu, taarifa za dunia halisi,
-      AI na biashara ili kutengeneza fursa zinazoweza
-      kuleta thamani na kipato.
-    </p>
-  </section>
+  <div class="balance">
+    <div class="balance-title">COOL Wallet</div>
+    <div class="money">TZS 0</div>
+    <button class="withdraw">Withdraw</button>
+  </div>
 
-  <div class="grid">
+  <div class="section">
+    <h3>🔥 Kazi mpya</h3>
+    <span>View all</span>
+  </div>
 
-    <div class="card">
-      <div class="icon">📸</div>
-      <h3>Camera</h3>
-      <p>Thibitisha bidhaa, bei na taarifa za maeneo.</p>
+  <div class="tasks">
+
+    <div class="task">
+      <div class="task-top">
+        <span class="tag">LOCAL INTELLIGENCE</span>
+        <span class="reward">TZS 1,500</span>
+      </div>
+      <h4>Bei za bidhaa — Musoma</h4>
+      <p>Piga picha bei za bidhaa 5 katika eneo lako.</p>
+      <button class="apply" onclick="alert('Task imechaguliwa!')">
+        CHUKUA TASK
+      </button>
     </div>
 
-    <div class="card">
-      <div class="icon">🎙️</div>
-      <h3>Voice</h3>
-      <p>Shiriki kazi za sauti na lugha.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">📍</div>
-      <h3>Local Knowledge</h3>
-      <p>Uza maarifa ya eneo lako kwa biashara.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🤖</div>
-      <h3>AI Tasks</h3>
-      <p>Pokea kazi zinazolingana na uwezo wako.</p>
+    <div class="task">
+      <div class="task-top">
+        <span class="tag">AI TASK</span>
+        <span class="reward">TZS 2,000</span>
+      </div>
+      <h4>Voice & Language Task</h4>
+      <p>Rekodi sentensi fupi kwa ajili ya AI.</p>
+      <button class="apply" onclick="alert('Task imechaguliwa!')">
+        CHUKUA TASK
+      </button>
     </div>
 
   </div>
 
-  <form id="profileForm">
+  <div class="section">
+    <h3>Uwezo wako</h3>
+  </div>
 
-    <h2>Jiunge na COOL</h2>
+  <div class="capabilities">
 
-    <input
-      type="text"
-      id="name"
-      placeholder="Jina lako"
-      required
-    >
-
-    <input
-      type="text"
-      id="city"
-      placeholder="Mji / Eneo"
-      required
-    >
-
-    <select id="skill" required>
-      <option value="">Chagua uwezo wako</option>
-      <option>Camera / Photography</option>
-      <option>Voice / Language</option>
-      <option>Local Knowledge</option>
-      <option>AI / Computer</option>
-      <option>Research</option>
-      <option>Sales / Business</option>
-    </select>
-
-    <input
-      type="tel"
-      id="whatsapp"
-      placeholder="WhatsApp number"
-      required
-    >
-
-    <button type="submit">
-      JIUNGE NA COOL 🚀
-    </button>
-
-    <div class="success" id="success">
-      🎉 Profile yako imehifadhiwa!
+    <div class="cap">
+      <div class="cap-icon">📸</div>
+      <h4>Camera</h4>
+      <p>Photography & verification</p>
     </div>
 
-  </form>
+    <div class="cap">
+      <div class="cap-icon">🎙️</div>
+      <h4>Voice</h4>
+      <p>Language & voice tasks</p>
+    </div>
 
-  <div class="flow">
-    📱 Signal
-    →
-    🤖 AI
-    →
-    💡 Fursa
-    →
-    👤 Mshiriki
-    →
-    ✅ Uthibitisho
-    →
-    💰 Malipo
+    <div class="cap">
+      <div class="cap-icon">📍</div>
+      <h4>Local</h4>
+      <p>Market intelligence</p>
+    </div>
+
+    <div class="cap">
+      <div class="cap-icon">🤖</div>
+      <h4>AI</h4>
+      <p>AI & computer tasks</p>
+    </div>
+
   </div>
 
 </div>
+</div>
 
-<footer>
-  COOL © 2026 — Opportunity Engine
-</footer>
+
+<!-- TASKS -->
+<div id="tasksPage" class="page">
+<div class="container">
+
+  <h2>💼 Tasks</h2>
+  <p style="color:#6b7280;margin-top:7px">
+    Tafuta kazi zinazokufaa.
+  </p>
+
+  <div class="tasks" style="margin-top:20px">
+
+    <div class="task">
+      <span class="tag">MUSOMA</span>
+      <h4>Price Intelligence</h4>
+      <p>Chunguza bei za bidhaa katika maduka 3.</p>
+      <div class="reward" style="margin-top:10px">TZS 3,000</div>
+      <button class="apply">CHUKUA TASK</button>
+    </div>
+
+    <div class="task">
+      <span class="tag">VOICE</span>
+      <h4>Swahili Voice Collection</h4>
+      <p>Rekodi voice samples kwa ajili ya AI.</p>
+      <div class="reward" style="margin-top:10px">TZS 2,500</div>
+      <button class="apply">CHUKUA TASK</button>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+
+<!-- WALLET -->
+<div id="wallet" class="page">
+<div class="container">
+
+  <h2>💰 Wallet</h2>
+
+  <div class="balance" style="margin-top:20px">
+    <div class="balance-title">Available balance</div>
+    <div class="money">TZS 0</div>
+    <button class="withdraw">WITHDRAW</button>
+  </div>
+
+  <div class="section">
+    <h3>Transactions</h3>
+  </div>
+
+  <div class="task">
+    Hakuna transactions bado.
+  </div>
+
+</div>
+</div>
+
+
+<!-- PROFILE -->
+<div id="profile" class="page">
+<div class="container">
+
+  <h2>👤 Profile</h2>
+
+  <div class="task" style="margin-top:20px">
+
+    <input id="name" placeholder="Jina lako">
+    <input id="city" placeholder="Mji / Eneo">
+    <input id="phone" placeholder="WhatsApp">
+
+    <button class="apply" onclick="saveProfile()">
+      HIFADHI PROFILE
+    </button>
+
+    <p id="saved" style="margin-top:12px;color:green"></p>
+
+  </div>
+
+</div>
+</div>
+
+
+<!-- NAVIGATION -->
+<nav class="bottom">
+
+<button class="nav active" onclick="showPage('home',this)">
+<div>🏠</div>
+Home
+</button>
+
+<button class="nav" onclick="showPage('tasksPage',this)">
+<div>💼</div>
+Tasks
+</button>
+
+<button class="nav" onclick="showPage('wallet',this)">
+<div>💰</div>
+Wallet
+</button>
+
+<button class="nav" onclick="showPage('profile',this)">
+<div>👤</div>
+Profile
+</button>
+
+</nav>
+
+</div>
+
 
 <script>
 
-  const form = document.getElementById("profileForm");
-  const success = document.getElementById("success");
+function showPage(page,button){
 
-  form.addEventListener("submit", function(event) {
+  document.querySelectorAll('.page')
+    .forEach(p=>p.classList.remove('active'));
 
-    event.preventDefault();
+  document.getElementById(page)
+    .classList.add('active');
 
-    const profile = {
-      name: document.getElementById("name").value,
-      city: document.getElementById("city").value,
-      skill: document.getElementById("skill").value,
-      whatsapp: document.getElementById("whatsapp").value
-    };
+  document.querySelectorAll('.nav')
+    .forEach(n=>n.classList.remove('active'));
 
-    localStorage.setItem(
-      "cool_profile",
-      JSON.stringify(profile)
-    );
+  button.classList.add('active');
 
-    success.style.display = "block";
+  window.scrollTo(0,0);
+}
 
-    form.reset();
 
-  });
+function saveProfile(){
+
+  const profile={
+    name:document.getElementById('name').value,
+    city:document.getElementById('city').value,
+    phone:document.getElementById('phone').value
+  };
+
+  localStorage.setItem(
+    'cool_profile',
+    JSON.stringify(profile)
+  );
+
+  document.getElementById('saved').innerText =
+    '✅ Profile imehifadhiwa!';
+}
 
 </script>
 
